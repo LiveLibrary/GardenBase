@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useConvexQuery } from "convex-vue";
-import { api } from "../../convex/_generated/api";
+import { api } from "!/_generated/api";
 
 const { data, isLoading } = useConvexQuery(api.tasks.get, {});
 </script>
