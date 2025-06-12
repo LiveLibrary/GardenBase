@@ -21,6 +21,11 @@ import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeExternalLinks from "rehype-external-links";
 import rehypeUnwrapImages from "rehype-unwrap-images";
 
+import vue from "@astrojs/vue";
+import liveCode from "astro-live-code";
+
+import react from "@astrojs/react";
+
 // https://astro.build/config
 export default defineConfig({
 	site: siteConfig.url,
@@ -28,6 +33,15 @@ export default defineConfig({
 		domains: ["webmention.io"],
 	},
 	integrations: [
+		react(),
+		vue({ appEntrypoint: "/src/vue/_main" }),
+		liveCode({
+			defaultProps: {
+				theme: "dark",
+				// apply client directives to all components
+				"client:load": true,
+			},
+		}),
 		expressiveCode(expressiveCodeOptions),
 		icon(),
 		sitemap(),

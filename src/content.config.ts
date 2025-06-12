@@ -55,4 +55,29 @@ const tag = defineCollection({
 	}),
 });
 
-export const collections = { post, note, tag };
+const demo = defineCollection({
+	loader: glob({ base: "./src/content/demo", pattern: "**/*.{md,mdx}" }),
+	schema: ({ image }) =>
+		baseSchema.extend({
+			description: z.string().optional(),
+			coverImage: z
+				.object({
+					alt: z.string(),
+					src: image(),
+				})
+				.optional(),
+			draft: z.boolean().default(false),
+			ogImage: z.string().optional(),
+			tags: z.array(z.string()).default([]).transform(removeDupsAndLowerCase),
+			publishDate: z
+				.string()
+				.or(z.date())
+				.transform((val) => new Date(val)),
+			updatedDate: z
+				.string()
+				.optional()
+				.transform((str) => (str ? new Date(str) : undefined)),
+		}),
+});
+
+export const collections = { post, note, tag, demo };

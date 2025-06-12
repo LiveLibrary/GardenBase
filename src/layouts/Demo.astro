@@ -1,21 +1,21 @@
 ---
 import { type CollectionEntry, render } from "astro:content";
 
-import Masthead from "@/components/blog/Masthead.astro";
-import TOC from "@/components/blog/TOC.astro";
-import WebMentions from "@/components/blog/webmentions/index.astro";
+import Masthead from "@/components/demo/Masthead.astro";
+import TOC from "@/components/demo/TOC.astro";
+import WebMentions from "@/components/demo/webmentions/index.astro";
 
 import BaseLayout from "./Base.astro";
 
 interface Props {
-	post: CollectionEntry<"post">;
+	demo: CollectionEntry<"demo">;
 }
 
-const { post } = Astro.props;
-const { ogImage, title, description, updatedDate, publishDate } = post.data;
-const socialImage = ogImage ?? `/og-image/${post.id}.png`;
+const { demo } = Astro.props;
+const { ogImage, title, description, updatedDate, publishDate } = demo.data;
+const socialImage = ogImage ?? `/og-image/${demo.id}.png`;
 const articleDate = updatedDate?.toISOString() ?? publishDate.toISOString();
-const { headings, remarkPluginFrontmatter } = await render(post);
+const { headings, remarkPluginFrontmatter } = await render(demo);
 const readingTime: string = remarkPluginFrontmatter.readingTime;
 ---
 
@@ -28,7 +28,7 @@ const readingTime: string = remarkPluginFrontmatter.readingTime;
 	}}
 >
 	<article class="grow break-words" data-pagefind-body>
-		<div id="blog-hero" class="mb-12"><Masthead content={post} readingTime={readingTime} /></div>
+		<div id="blog-hero" class="mb-12"><Masthead content={demo} readingTime={readingTime} /></div>
 		<div class="flex flex-col gap-10 lg:flex-row lg:items-start">
 			{!!headings.length && <TOC headings={headings} />}
 			<div

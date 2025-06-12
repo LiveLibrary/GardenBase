@@ -16,19 +16,29 @@
 	"dependencies": {
 		"@astrojs/markdown-remark": "^6.3.2",
 		"@astrojs/mdx": "4.3.0",
+		"@astrojs/react": "^4.3.0",
 		"@astrojs/rss": "4.0.11",
 		"@astrojs/sitemap": "3.4.0",
+		"@astrojs/vue": "^5.1.0",
 		"@tailwindcss/vite": "4.1.7",
+		"@types/react": "^19.1.8",
+		"@types/react-dom": "^19.1.6",
+		"@vueuse/core": "^13.3.0",
 		"astro": "5.8.0",
 		"astro-expressive-code": "^0.41.2",
 		"astro-icon": "^1.1.5",
+		"astro-live-code": "^0.0.6",
 		"astro-robots-txt": "^1.0.0",
 		"astro-webmanifest": "^1.0.0",
+		"convex": "^1.24.8",
+		"convex-vue": "^0.0.5",
 		"cssnano": "^7.0.7",
 		"hastscript": "^9.0.0",
 		"mdast-util-directive": "^3.0.0",
 		"mdast-util-to-markdown": "^2.1.2",
 		"mdast-util-to-string": "^4.0.0",
+		"react": "^19.1.0",
+		"react-dom": "^19.1.0",
 		"rehype-autolink-headings": "^7.1.0",
 		"rehype-external-links": "^3.0.0",
 		"rehype-unwrap-images": "^1.0.0",
@@ -37,7 +47,8 @@
 		"satori-html": "^0.3.2",
 		"sharp": "^0.34.2",
 		"unified": "^11.0.5",
-		"unist-util-visit": "^5.0.0"
+		"unist-util-visit": "^5.0.0",
+		"vue": "^3.5.16"
 	},
 	"devDependencies": {
 		"@astrojs/check": "^0.9.4",
@@ -55,7 +66,8 @@
 		"prettier-plugin-tailwindcss": "^0.6.11",
 		"reading-time": "^1.5.0",
 		"tailwindcss": "4.1.7",
-		"typescript": "^5.8.3"
+		"typescript": "^5.8.3",
+		"vite": "^6.3.5"
 	},
 	"pnpm": {
 		"overrides": {
@@ -65,7 +77,8 @@
 			"@biomejs/biome",
 			"@tailwindcss/oxide",
 			"esbuild",
-			"sharp"
+			"sharp",
+			"vue-demi"
 		]
 	}
 }

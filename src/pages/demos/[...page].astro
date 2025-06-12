@@ -1,34 +1,34 @@
 ---
 import type { CollectionEntry } from "astro:content";
 import Pagination from "@/components/Paginator.astro";
-import PostPreview from "@/components/post/PostPreview.astro";
-import { getAllPosts, getUniqueTags, groupPostsByYear } from "@/data/post";
+import DemoPreview from "@/components/demo/DemoPreview.astro";
+import { getAllDemos, getUniqueTags, groupDemosByYear } from "@/data/demo";
 import PageLayout from "@/layouts/Base.astro";
 import { collectionDateSort } from "@/utils/date";
 import type { GetStaticPaths, Page } from "astro";
 import { Icon } from "astro-icon/components";
 
 export const getStaticPaths = (async ({ paginate }) => {
-	const MAX_POSTS_PER_PAGE = 10;
+	const MAX_DEMOS_PER_PAGE = 10;
 	const MAX_TAGS = 7;
-	const allPosts = await getAllPosts();
-	const uniqueTags = getUniqueTags(allPosts).slice(0, MAX_TAGS);
-	return paginate(allPosts.sort(collectionDateSort), {
-		pageSize: MAX_POSTS_PER_PAGE,
+	const allDemos = await getAllDemos();
+	const uniqueTags = getUniqueTags(allDemos).slice(0, MAX_TAGS);
+	return paginate(allDemos.sort(collectionDateSort), {
+		pageSize: MAX_DEMOS_PER_PAGE,
 		props: { uniqueTags },
 	});
 }) satisfies GetStaticPaths;
 
 interface Props {
-	page: Page<CollectionEntry<"post">>;
+	page: Page<CollectionEntry<"demo">>;
 	uniqueTags: string[];
 }
 
 const { page, uniqueTags } = Astro.props;
 
 const meta = {
-	description: "Read my collection of posts and the things that interest me",
-	title: "Posts",
+	description: "Read my collection of demos and the things that interest me",
+	title: "Demos",
 };
 
 const paginationProps = {
@@ -46,13 +46,13 @@ const paginationProps = {
 	}),
 };
 
-const groupedByYear = groupPostsByYear(page.data);
+const groupedByYear = groupDemosByYear(page.data);
 const descYearKeys = Object.keys(groupedByYear).sort((a, b) => +b - +a);
 ---
 
 <PageLayout meta={meta}>
 	<div class="mb-6 flex items-center gap-3">
-		<h1 class="title">Posts</h1>
+		<h1 class="title">Demos</h1>
 		<a class="text-accent" href="/rss.xml" target="_blank">
 			<span class="sr-only">RSS feed</span>
 			<Icon aria-hidden="true" class="h-6 w-6" focusable="false" name="mdi:rss" />
@@ -64,13 +64,13 @@ const descYearKeys = Object.keys(groupedByYear).sort((a, b) => +b - +a);
 				descYearKeys.map((yearKey) => (
 					<section aria-labelledby={`year-${yearKey}`}>
 						<h2 id={`year-${yearKey}`} class="title text-lg">
-							<span class="sr-only">Posts in</span>
+							<span class="sr-only">Demos in</span>
 							{yearKey}
 						</h2>
 						<ul class="mt-5 mb-16 space-y-6 text-start">
 							{groupedByYear[yearKey]?.map((p) => (
 								<li class="grid gap-2 sm:grid-cols-[auto_1fr] sm:[&_q]:col-start-2">
-									<PostPreview post={p} />
+									<DemoPreview demo={p} />
 								</li>
 							))}
 						</ul>
@@ -106,7 +106,7 @@ const descYearKeys = Object.keys(groupedByYear).sort((a, b) => +b - +a);
 							<li>
 								<a class="cactus-link flex items-center justify-center" href={`/tags/${tag}/`}>
 									<span aria-hidden="true">#</span>
-									<span class="sr-only">View all posts with the tag</span>
+									<span class="sr-only">View all demos with the tag</span>
 									{tag}
 								</a>
 							</li>
