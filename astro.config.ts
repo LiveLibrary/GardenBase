@@ -35,13 +35,7 @@ export default defineConfig({
 	integrations: [
 		react(),
 		vue({ appEntrypoint: "/src/vue/_main" }),
-		liveCode({
-			defaultProps: {
-				theme: "dark",
-				// apply client directives to all components
-				"client:load": true,
-			},
-		}),
+		liveCode({ defaultProps: { "client:load": true } }),
 		expressiveCode(expressiveCodeOptions),
 		icon(),
 		sitemap(),

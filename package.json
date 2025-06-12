@@ -11,7 +11,8 @@
 		"format": "pnpm run format:code && pnpm run format:imports",
 		"format:code": "biome format . --write && prettier -w \"**/*\" \"!**/*.{md,mdx}\" --ignore-unknown --cache",
 		"format:imports": "biome check --formatter-enabled=false --write",
-		"check": "astro check"
+		"check": "astro check",
+		"up": "npx taze major -I"
 	},
 	"dependencies": {
 		"@astrojs/markdown-remark": "^6.3.2",
@@ -20,6 +21,8 @@
 		"@astrojs/rss": "4.0.11",
 		"@astrojs/sitemap": "3.4.0",
 		"@astrojs/vue": "^5.1.0",
+		"@iconify/vue": "^5.0.0",
+		"@radix-ui/colors": "^3.0.0",
 		"@tailwindcss/vite": "4.1.7",
 		"@types/react": "^19.1.8",
 		"@types/react-dom": "^19.1.6",
@@ -33,6 +36,7 @@
 		"convex": "^1.24.8",
 		"convex-vue": "^0.0.5",
 		"cssnano": "^7.0.7",
+		"grid-layout-plus": "^1.1.0",
 		"hastscript": "^9.0.0",
 		"mdast-util-directive": "^3.0.0",
 		"mdast-util-to-markdown": "^2.1.2",
@@ -42,13 +46,17 @@
 		"rehype-autolink-headings": "^7.1.0",
 		"rehype-external-links": "^3.0.0",
 		"rehype-unwrap-images": "^1.0.0",
+		"reka-ui": "^2.3.1",
 		"remark-directive": "^4.0.0",
 		"satori": "0.13.1",
 		"satori-html": "^0.3.2",
 		"sharp": "^0.34.2",
+		"starlight-links-validator": "^0.16.0",
+		"taze": "^19.1.0",
 		"unified": "^11.0.5",
 		"unist-util-visit": "^5.0.0",
-		"vue": "^3.5.16"
+		"vue": "^3.5.16",
+		"vuetify": "^3.8.9"
 	},
 	"devDependencies": {
 		"@astrojs/check": "^0.9.4",
