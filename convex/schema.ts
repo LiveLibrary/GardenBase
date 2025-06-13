@@ -6,4 +6,7 @@ export default defineSchema({
 		text: v.string(),
 		isCompleted: v.boolean(),
 	}),
+	times: defineTable({
+		time: v.number(),
+	}),
 });

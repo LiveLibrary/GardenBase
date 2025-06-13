@@ -1,3 +1,16 @@
+# 逍遥书院Lib
+
+边际递减，
+
+数据加工厂Fab
+信息中心Hub
+知识书院Lib
+智慧实验室Lab
+
+算法化数据化清晰化可视化，抽象层建模
+
+
+
 <div align="center">
   <img alt="Astro Cactus logo" src="https://github.com/chrismwilliams/astro-theme-cactus/assets/12715988/85aa0d3c-ef6a-44e2-954d-ef035b4f4315" width="70" />
 </div>

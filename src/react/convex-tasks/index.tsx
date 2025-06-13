@@ -1,14 +1,14 @@
 import React from "react";
 import { ConvexProvider, ConvexReactClient } from "convex/react";
-import ConvexTasks from "./convex-tasks";
+import ConvexTasksCompo from "./convex-tasks-compo";
 
 const convex = new ConvexReactClient(import.meta.env.PUBLIC_CONVEX_URL as string);
 
-export default function App() {
+export default function () {
 	return (
 		<React.StrictMode>
 			<ConvexProvider client={convex}>
-				<ConvexTasks />
+				<ConvexTasksCompo />
 			</ConvexProvider>
 		</React.StrictMode>
 	);
