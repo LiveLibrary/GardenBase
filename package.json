@@ -49,7 +49,7 @@
 		"rehype-unwrap-images": "^1.0.0",
 		"reka-ui": "^2.3.1",
 		"remark-directive": "^4.0.0",
-		"satori": "0.13.1",
+		"satori": "0.15.2",
 		"satori-html": "^0.3.2",
 		"sharp": "^0.34.2",
 		"starlight-links-validator": "^0.16.0",
