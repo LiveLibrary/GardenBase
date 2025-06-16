@@ -25,9 +25,9 @@ export const siteConfig: SiteConfig = {
 		- The link value found in src/components/layout/Header.astro L:35
 		- In the footer found in src/components/layout/Footer.astro L:12
 	*/
-	title: "LibKit",
+	title: "LiveKit",
 	// ! Please remember to replace the following site property with your own domain, used in astro.config.ts
-	url: "https://libbase.lushisang.com/",
+	url: "https://kit.lushisang.com/",
 };
 
 // Used to generate links in both the Header & Footer.
