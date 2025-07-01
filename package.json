@@ -24,7 +24,7 @@
 		"@astrojs/vue": "^5.1.0",
 		"@iconify/vue": "^5.0.0",
 		"@radix-ui/colors": "^3.0.0",
-		"@tailwindcss/vite": "4.1.7",
+		"@tailwindcss/vite": "4.1.11",
 		"@types/react": "^19.1.8",
 		"@types/react-dom": "^19.1.6",
 		"@vueuse/core": "^13.3.0",
